@@ -1,4 +1,9 @@
 import Link from "next/link";
+// static method to define metadata for the page using this function
+export const metadata = {
+  title: "Services Page",
+  description: "This is Services Page description",
+};
 
 export default function Services() {
   return (
