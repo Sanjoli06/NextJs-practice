@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
  // dynamic metadata generation based on params using generateMetadata function
  export async function generateMetadata({params}){
     const {blogID}=await params;
@@ -10,6 +12,9 @@ export default async function BlogIds({params, searchParams}) {
     console.log(await searchParams);
     console.log(await params);
     const {blogID}=await params;
+    if(!/^\d+$/.test(blogID)){
+      notFound();
+    }
   return (
     <div>
       <h1> All blogs </h1>
